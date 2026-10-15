@@ -9,7 +9,7 @@ Compliance** with hands-on **Blue Team security operations**.
 - **GRC & Audit:** ISO/IEC 27001 & ISO/IEC 42001 Lead Auditor · risk assessment · control mapping · ISMS · NIS2
 - **SOC / Blue Team:** SIEM/EDR (Splunk, Microsoft Defender, Trend Vision One) · log analysis · incident triage · threat hunting · Cyber Kill Chain
 - **AI & Security:** ISO/IEC 42001 (AI management) · AI in cybersecurity
-- Based in Gent, Belgium — open to roles in BE / NL / DE
+- Based in Gent, Belgium — open to roles in BE / EU
 
 ### Repositories
 - **[kerberoasting-blue-team](https://github.com/onur-uyar-security/kerberoasting-blue-team)** — detection & response write-up (Windows Event ID 4769, Splunk, Sigma)
