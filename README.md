@@ -12,7 +12,7 @@ Compliance** with hands-on **Blue Team security operations**.
 - Based in Gent, Belgium — open to roles in BE / NL / DE
 
 ### Repositories
-- **[kerberoasting-blue-team]([https://github.com/onur-uyar-security/kerberoasting-blue-team])** — detection & response write-up (Windows Event ID 4769, Splunk, Sigma)
+- **[kerberoasting-blue-team][https://github.com/onur-uyar-security/kerberoasting-blue-team]** — detection & response write-up (Windows Event ID 4769, Splunk, Sigma)
 - **grc-toolkit** — ISO 27001 / 42001 & NIS2 notes and templates *(coming soon)*
 
 ### Certifications
