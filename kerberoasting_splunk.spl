@@ -1,0 +1,24 @@
+```spl
+/* Kerberoasting detection — Windows Security Event ID 4769 (TGS request)
+   Flags one account requesting many distinct SPN service tickets with RC4 (0x17)
+   encryption in a short window. Tune span and threshold to your environment.
+   Field names may differ by TA/sourcetype — adjust to your Splunk Add-on for Windows. */
+
+index=wineventlog sourcetype="WinEventLog:Security" EventCode=4769
+/* 0x17 = RC4-HMAC (weak). Keep this filter if your estate is AES-only. */
+Ticket_Encryption_Type="0x17"
+/* Exclude machine accounts (SPNs ending in $) — user accounts are the usual target */
+Service_Name!="*$"
+/* Ignore well-known noise such as krbtgt */
+Service_Name!="krbtgt"
+| bucket _time span=10m
+| stats count AS requests
+        dc(Service_Name) AS unique_spns
+        values(Service_Name) AS targeted_spns
+        values(Ticket_Encryption_Type) AS enc_types
+      BY _time, Account_Name, Client_Address
+/* Threshold: 5+ distinct SPNs in the 10-minute window — tune for your baseline */
+| where unique_spns >= 5
+| sort - unique_spns
+| table _time, Account_Name, Client_Address, unique_spns, requests, targeted_spns
+```

@@ -1,0 +1,39 @@
+title: Potential Kerberoasting via RC4 Kerberos Service Ticket Requests
+id: 9f8d2a14-6b2e-4c7a-9f1d-2b7a1c0e5a30
+status: experimental
+description: >
+  Detects Kerberos service ticket requests (Windows Security Event ID 4769) using
+  RC4-HMAC (0x17) encryption for user-account SPNs, which is characteristic of
+  Kerberoasting. Threshold-based aggregation (many distinct SPNs per account in a
+  short window) should be applied in the SIEM/correlation layer.
+references:
+  - https://attack.mitre.org/techniques/T1558/003/
+author: Osman Onur Uyar
+date: 2026/10/15
+tags:
+  - attack.credential_access
+  - attack.t1558.003
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4769
+    TicketEncryptionType: '0x17'
+  filter_machine_accounts:
+    ServiceName|endswith: '$'
+  filter_krbtgt:
+    ServiceName: 'krbtgt'
+  condition: selection and not filter_machine_accounts and not filter_krbtgt
+fields:
+  - AccountName
+  - ServiceName
+  - TicketEncryptionType
+  - IpAddress
+falsepositives:
+  - Legacy applications or systems that still require RC4 encryption
+  - Vulnerability scanners and authorised security assessments
+  - Service accounts not yet migrated to AES
+level: medium
+# Note: for higher fidelity, aggregate in the SIEM — e.g. >= 5 distinct ServiceName
+# values per AccountName within 10 minutes — rather than alerting on each 4769.
