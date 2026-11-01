@@ -13,7 +13,7 @@ Compliance** with hands-on **Blue Team security operations**.
 
 ### Repositories
 - **[kerberoasting-blue-team](https://github.com/onur-uyar-security/kerberoasting-blue-team)** — detection & response write-up (Windows Event ID 4769, Splunk, Sigma)
-- **grc-toolkit** — ISO 27001 / 42001 & NIS2 notes and templates *(coming soon)*
+- **grc-toolkit** — ISO 27001 / 42001 & NIS2 notes and templates.(https://github.com/onur-uyar-security/grc-toolkit)
 
 ### Certifications
 ISO/IEC 27001 Lead Auditor · ISO/IEC 42001 Lead Auditor · ISO 27001 & 42001 Foundation · CompTIA Security+ *(in progress)*
