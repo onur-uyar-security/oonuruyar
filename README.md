@@ -16,7 +16,7 @@ Compliance** with hands-on **Blue Team security operations**.
 - **[grc-toolkit](https://github.com/onur-uyar-security/grc-toolkit)** — ISO 27001 / 42001 & NIS2 notes and templates.
 - **[honeypots-in-cybersecurity](https://github.com/onur-uyar-security/honeypots-in-cybersecurity)**
 - **[t1562-impair-defenses-detections](https://github.com/onur-uyar-security/t1562-impair-defenses-detections)**
--  **[Phishing-Analysis-Playbook-SOC-Blue-Team](https://github.com/onur-uyar-security/Phishing-Analysis-Playbook-SOC-Blue-Team)**
+-  **[Phishing-Analysis-Playbook-SOC-Blue-Team](https://github.com/onur-uyar-security/Phishing-Analysis-Playbook-SOC-Blue-Team-)**
 -  **[owasp-llm-ai-security-notes](https://github.com/onur-uyar-security/owasp-llm-ai-security-notes)**
 -  **[Splunk-Risk-Based-Alerting-RBA-Notes-Examples](https://github.com/onur-uyar-security/Splunk-Risk-Based-Alerting-RBA-Notes-Examples)**
 
